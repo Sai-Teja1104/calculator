@@ -20,6 +20,22 @@ float divide(int i, int j) {
     return ((float) i / j);  // Explicit type casting to float for decimal results.
 }
 
+int square(int i) {
+    return i * i;
+  }
+
+int cube(int i) {
+    return i * i * i;
+   }
+
+float inverse(int i) {
+     if (i == 0) {
+        printf("Error: Inverse of zero is undefined. \n");
+        return 0;  //Return 0 to indicate an error.
+	}
+	return 1.0 / i;
+     }
+
 int main() {
     int a, b;
     char operation;
@@ -64,17 +80,19 @@ int main() {
             case '^':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                printf("The square of %d is %d\n", a, square(a));
                 break;
             case '#':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                printf("The cube of %d is %d\n", a, cube(a));
                 break;
             case 'i':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                if(a != 0) {
+                     printf("The inverse of %d is %.2f\n", a, inverse(a));
+                       }
                 break;
             default:
                 printf("Invalid operation. Please try again.\n");
@@ -86,3 +104,4 @@ int main() {
 
     return 0;
 }
+
